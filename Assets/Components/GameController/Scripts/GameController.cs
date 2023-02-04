@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class GameController : Singleton<GameController>
 {
+    private const int _goodIngredientScore = 1;
+    private const int _badIngredientScore = -2;
+    private const int _goodScore = 4;
+    private const int _neutralScore = 2;
+
     private int _day = 0;
     private int _completedOrders = 0;
     private int _totalOrdersToday = 3;
@@ -31,10 +36,30 @@ public class GameController : Singleton<GameController>
         else NotesController.Instance.UpdateOrderNote(_orderData[_completedOrders].Preference);
     }
 
-    public void CompleteOrder() => CompleteOrder(Order.Feedback.Bad);
+    public void CompleteOrder() => CompleteOrder(new Recipe(Recipe.DishType.Salad));
 
-    public void CompleteOrder(Order.Feedback feedback)
+    public void CompleteOrder(Recipe recipe)
     {
+        int score = recipe.Ingredients.Count;
+
+        foreach(IngredientData ingredient in _orderData[_completedOrders].GoodIngredients)
+        {
+            if(recipe.Ingredients.Contains(ingredient)) score += _goodIngredientScore;
+        }
+
+        foreach(IngredientData ingredient in _orderData[_completedOrders].GoodIngredients)
+        {
+            if(recipe.Ingredients.Contains(ingredient)) score += _badIngredientScore;
+        }
+
+        if(recipe.Type != _orderData[_completedOrders].Dishtype) score = _neutralScore - 1;
+
+        Order.Feedback feedback;
+
+        if(score >= _goodScore) feedback = Order.Feedback.Good;
+        else if (score >= _neutralScore) feedback = Order.Feedback.Neutral;
+        else feedback = Order.Feedback.Bad;
+
         _ordersCompletedToday++;
         _completedOrders++;
         _dailyRating += (int)feedback;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Order", menuName = "ScriptableObjects/Order")]
@@ -31,8 +32,16 @@ public class Order : ScriptableObject
     [SerializeField] private Note _neutralFeedback;
     [SerializeField] private Note _badFeedback;
 
+    [SerializeField] private Recipe.DishType _dishtype;
+    [SerializeField] private List<IngredientData> _goodIngredients;
+    [SerializeField] private List<IngredientData> _badIngredients;
+
     public Note Preference => _preference;
     public Note GoodFeedback => _goodFeedback;
     public Note NeutralFeedback => _neutralFeedback;
     public Note BadFeedback => _badFeedback;
+
+    public Recipe.DishType Dishtype => _dishtype;
+    public List<IngredientData> GoodIngredients => _goodIngredients;
+    public List<IngredientData> BadIngredients => _badIngredients;
 }
