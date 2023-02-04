@@ -1864,15 +1864,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slides:
-  - _dialogue: Yo!
+  - _dialogue: Hey!.
     _emoji: 0
-  - _dialogue: Shut the fuck up man!
-    _emoji: 1
-  - _dialogue: I am Trying To Concentrate!
-    _emoji: 4
-  - _dialogue: EEEEEEEEEEEEEEEEEEEEDIOT!!!!!
+  - _dialogue: Welcome to Rooted Kitchen!.
+    _emoji: 2
+  - _dialogue: The theme of the Jam....
+    _emoji: 0
+  - _dialogue: I mean the theme of this kitchen is Roots!.
     _emoji: 3
-  - _dialogue: Ok Onto Day 1 then....
+  - _dialogue: Vegetable Roots that is....
+    _emoji: 2
+  - _dialogue: And you are the new chef of this kitchen!.
+    _emoji: 0
+  - _dialogue: And I will be assisting you in your job!.
+    _emoji: 2
+  - _dialogue: We make 3 dishes in our kitchen  (1) Salads  (2) Soups  (3) Stir Fries.
+    _emoji: 0
+  - _dialogue: We customize these dishes based on the likes and dislikes of our customers....
+    _emoji: 2
+  - _dialogue: Our customers are very passionite about roots, and can sometimes be
+      very vague when describing their preferences....
+    _emoji: 0
+  - _dialogue: But I completely trust you to undertand their needs....
+    _emoji: 3
+  - _dialogue: Our goal for the next four days is to make a profit while also keeping
+      our customers happy!.
+    _emoji: 0
+  - _dialogue: If our customers are satisfied, we will get more the next day where
+      as bad customer reviews will reduce the amount of customers we receive the
+      nect day....
+    _emoji: 2
+  - _dialogue: Adding more ingredients and satisfying the customer expectations will
+      get us good reviews....
+    _emoji: 0
+  - _dialogue: Anyways... Let us get started for today!!
+    _emoji: 2
+  - _dialogue: ...
     _emoji: 0
   _emojiImage: {fileID: 8177079048926777578}
   _dialoguePacer: {fileID: 8177079049699978092}
