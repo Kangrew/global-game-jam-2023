@@ -30,6 +30,6 @@ public class TutorialManager : Singleton<TutorialManager>
         _emojiImage.sprite = Emotions.Instance.GetEmoji(_slides[currentSlide].Emoji);
         _dialoguePacer.StartDialogue(_slides[currentSlide].Dialogue, _dialoguePace);
         currentSlide++;
-        if(currentSlide >= _slides.Length) _onTutorialCompleted.Invoke();
+        if(currentSlide > _slides.Length) _onTutorialCompleted.Invoke();
     }
 }
