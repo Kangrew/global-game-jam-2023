@@ -12,9 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a899745f61af649bcb953059db9af5, type: 3}
   m_Name: Order 3
   m_EditorClassIdentifier: 
-  _preference: 'Give me Order 3
-
-'
-  _goodFeedback: Good this!
-  _neutralFeedback: Mehh!
-  _badFeedback: Disgusting!
+  _preference:
+    _content: I'd like to have a mild bowl of salad please. You see... I don't like
+      things that make me sweat...
+    _emoji: 0
+  _goodFeedback:
+    _content: 
+    _emoji: 2
+  _neutralFeedback:
+    _content: 
+    _emoji: 4
+  _badFeedback:
+    _content: 
+    _emoji: 1
+  _dishtype: 0
+  _goodIngredients: []
+  _badIngredients: []

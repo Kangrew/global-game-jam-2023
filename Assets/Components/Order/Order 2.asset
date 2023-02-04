@@ -12,7 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a899745f61af649bcb953059db9af5, type: 3}
   m_Name: Order 2
   m_EditorClassIdentifier: 
-  _preference: Give me Order 2
-  _goodFeedback: Good this!
-  _neutralFeedback: Mehh!
-  _badFeedback: Disgusting!
+  _preference:
+    _content: Could I have a bowl of soup with a hot flavor, but without any sour
+      elements, please?!
+    _emoji: 0
+  _goodFeedback:
+    _content: Spicyyyyyy!!!!!
+    _emoji: 3
+  _neutralFeedback:
+    _content: It was alright...
+    _emoji: 4
+  _badFeedback:
+    _content: Terrible!!! No flavor at all!!!
+    _emoji: 1
+  _dishtype: 1
+  _goodIngredients: []
+  _badIngredients: []

@@ -63,12 +63,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fcd47ea45fd09b442a1f3d7dbaf018f4, type: 2}
   - {fileID: 11400000, guid: fca0a05b5b07f154890af8e59aa9ca11, type: 2}
   - {fileID: 11400000, guid: c67221c336a924045a893556ccbee0d3, type: 2}
-  - {fileID: 11400000, guid: d0c7f419c53c24b4f9501e9cf1a3c762, type: 2}
-  - {fileID: 11400000, guid: be7fb46523292ae46adac27d9a9887a8, type: 2}
-  - {fileID: 11400000, guid: 85938bba8bbe4f448bd1d4b036cbc274, type: 2}
-  - {fileID: 11400000, guid: 66ec663305436c146af8b004fbdbadd5, type: 2}
-  - {fileID: 11400000, guid: b18d201f11c4a5048bb7ec65a3aea706, type: 2}
-  - {fileID: 11400000, guid: c2f8a8f9a97b50b4bb2b85e816fb95ce, type: 2}
-  - {fileID: 11400000, guid: 4e82175d0c217c74ba034e60e77787b6, type: 2}
   _dayNote: {fileID: 0}
   _gameOverScreen: {fileID: 0}

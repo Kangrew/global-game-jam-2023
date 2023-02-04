@@ -27,7 +27,6 @@ public class GameController : Singleton<GameController>
         InitiateTutorial();
     }
 
-    [ContextMenu("Initiate")]
     public void InitiateTutorial()
     {
         TutorialManager.Instance.NextSlide();

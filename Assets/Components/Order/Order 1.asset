@@ -13,14 +13,23 @@ MonoBehaviour:
   m_Name: Order 1
   m_EditorClassIdentifier: 
   _preference:
-    _content: Root Vegetable Soup Please
-    _emoji: 3
+    _content: Please make me a salad with all the sweet stuff
+    _emoji: 0
   _goodFeedback:
-    _content: This Gooood!!!!
+    _content: Sweeeeet!!!
     _emoji: 2
   _neutralFeedback:
-    _content: Mehh!
+    _content: Not as sweet as I would have liked it, but it was not bad...
     _emoji: 4
   _badFeedback:
-    _content: Outrageous!!!!
+    _content: Not sweet at all!!!
     _emoji: 1
+  _dishtype: 0
+  _goodIngredients:
+  - {fileID: 11400000, guid: 950b8167f4e0df147a1e04f20f6139cb, type: 2}
+  - {fileID: 11400000, guid: fed450743959a55428c5cd154ebbf21a, type: 2}
+  - {fileID: 11400000, guid: 754df816f14c01543b3a67ad97c6a311, type: 2}
+  _badIngredients:
+  - {fileID: 11400000, guid: b24c3c28793483545a53c724d1632d68, type: 2}
+  - {fileID: 11400000, guid: 07f80ee697ab7bb409014f262ed844dc, type: 2}
+  - {fileID: 11400000, guid: 1a8f4dbd42acc904f9829a3bd7bbc976, type: 2}
