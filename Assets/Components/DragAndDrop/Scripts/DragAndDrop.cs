@@ -6,17 +6,32 @@ using UnityEngine.EventSystems;
 
 public class DragAndDrop : MonoBehaviour
 {
-    public bool CanDrag = true;
+    public bool CanDrag = true, NeedHover = true;
     private bool IsDragging;
     private Vector2 currentPos, previousPos;
 
-    public event Action On_Drag, On_DragStart, On_DragEnd;
+    //hover update
+    private bool isHovering;
+
+    public event Action On_Drag, On_DragStart, On_DragEnd, On_EnterHover, On_ExitHover;
     private void Start()
     {
 
     }
     private void Update()
     {
+        if (NeedHover)
+        {
+            if (!isHovering && IsMouseOnObject())
+            {
+                isHovering= true;
+                On_EnterHover?.Invoke();
+            }else if(isHovering && !IsMouseOnObject())
+            {
+                isHovering= false;
+                On_ExitHover?.Invoke();
+            }
+        }
         if (CanDrag)
         {
             currentPos = Input.mousePosition;

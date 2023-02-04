@@ -5,21 +5,24 @@ using UnityEngine;
 public class Container : MonoBehaviour
 {
     public bool IsDragable;
-
+    public string ToolTipText;
     DragAndDrop drag;
     Vector3 dragStartPos;
     // Start is called before the first frame update
     void Start()
     {
+        drag = gameObject.AddComponent<DragAndDrop>();
+        drag.On_ExitHover += OnExitHover_Func;
+        drag.On_EnterHover += OnEnterHover_Func;
+
         if (IsDragable)
         {
-            drag = gameObject.AddComponent<DragAndDrop>();
+            drag.CanDrag = true;
             drag.On_DragStart += OnDragStart_Func;
             drag.On_DragEnd += OnDragEnd_Func;
-        }
-
+        }else
+            drag.CanDrag = false;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -40,11 +43,11 @@ public class Container : MonoBehaviour
         {
             if (hit.collider.TryGetComponent<Stove>(out Stove contain))
             {
-                transform.position = hit.collider.transform.position;
-                transform.position = new Vector3(
-                    transform.position.x,
-                    transform.position.y + transform.localScale.y / 2,
-                    transform.position.z);
+                transform.position = contain.PlaceHolder.position;
+                //transform.position = new Vector3(
+                //    transform.position.x,
+                //    transform.position.y,
+                //    transform.position.z);
                 transform.SetParent(hit.collider.transform);
                 if (IsDragable) drag.CanDrag = false;
                 return;
@@ -54,4 +57,13 @@ public class Container : MonoBehaviour
         transform.position = dragStartPos;
 
     }
+    private void OnEnterHover_Func()
+    {
+        ToolTip.instance.Show(ToolTipText);
+    }
+    private void OnExitHover_Func()
+    {
+        ToolTip.instance.Hide();
+    }
+
 }

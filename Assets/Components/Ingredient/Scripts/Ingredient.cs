@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-
+    public string ToolTipText;
     DragAndDrop drag;
     Vector3 dragStartPos;
     // Start is called before the first frame update
@@ -14,6 +14,8 @@ public class Ingredient : MonoBehaviour
         drag = gameObject.AddComponent<DragAndDrop>();
         drag.On_DragStart += OnDragStart_Func;
         drag.On_DragEnd += OnDragEnd_Func;
+        drag.On_ExitHover+= OnExitHover_Func;
+        drag.On_EnterHover+= OnEnterHover_Func;
     }
 
     // Update is called once per frame
@@ -52,5 +54,13 @@ public class Ingredient : MonoBehaviour
 
         transform.position = dragStartPos;
 
+    }
+    private void OnEnterHover_Func()
+    {
+        ToolTip.instance.Show(ToolTipText);
+    }
+    private void OnExitHover_Func()
+    {
+        ToolTip.instance.Hide();
     }
 }
