@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Pickled Radish
   m_EditorClassIdentifier: 
   _ingredientName: Pickled Radish
+  _ingredientToolTip: 
   _cost: 1
+  _ingredientColor: {r: 1, g: 0.9800755, b: 0.83396226, a: 1}
+  _ingredientDarkcolor: {r: 0.6037736, g: 0.6037736, b: 0.44086865, a: 1}

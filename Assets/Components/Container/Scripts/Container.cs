@@ -8,8 +8,8 @@ public class Container : MonoBehaviour
     public bool IsDragable;
     public string ToolTipText;
     public Recipe.DishType DishType;
-    public GameObject CookingPlane;
     public GameObject[] FillLevels;
+    public Material IngInContainer;
     public DragAndDrop drag;
     Vector3 dragStartPos;
 
@@ -61,6 +61,7 @@ public class Container : MonoBehaviour
                 //    transform.position.y,
                 //    transform.position.z);
                 //transform.SetParent(hit.collider.transform);
+                Debug.Log("vvv");
                 if (!stove.PlaceContainer(this)) { 
                     transform.position = dragStartPos;
                 
@@ -86,16 +87,16 @@ public class Container : MonoBehaviour
         ToolTip.instance.Hide();
     }
 
-    public void PushToOrginalPos() {  
-        transform.DOMove(ContainerOrginalPos, 0.1f);
-        drag.CanDrag = true;
-        _onStove = false;
-    }
-    public void PlaceOnStove(Vector3 pos) {  
-        transform.position = pos;
-        transform.DOPunchScale(Vector3.one,30);
-        _onStove = true;
-    }
+    //public void PushToOrginalPos() {  
+    //    transform.DOMove(ContainerOrginalPos, 0.1f);
+    //    drag.CanDrag = true;
+    //    _onStove = false;
+    //}
+    //public void PlaceOnStove(Vector3 pos) {  
+    //    transform.position = pos;
+    //    transform.DOPunchScale(Vector3.one,30);
+    //    _onStove = true;
+    //}
 
     public void AddIngredient(IngredientData data)
     {
@@ -104,6 +105,9 @@ public class Container : MonoBehaviour
             InitiateRecipe(); 
         }
         currentRecipe.AddIngredient(data);
+        if(DishType == Recipe.DishType.Soup) IngInContainer.color = data.IngredientColor;
+        if (DishType == Recipe.DishType.StirFry) IngInContainer.color = data.IngredientDarkColor;
+
         SelectLevel(currentRecipe.Ingredients.Count - 1);
     }
     private void InitiateRecipe()

@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Sweet Potato
   m_EditorClassIdentifier: 
   _ingredientName: Sweet Potato
+  _ingredientToolTip: 
   _cost: 1
+  _ingredientColor: {r: 0.87058824, g: 0.5058824, b: 0.5434423, a: 1}
+  _ingredientDarkcolor: {r: 0.4528302, g: 0.19821998, b: 0.2255974, a: 1}

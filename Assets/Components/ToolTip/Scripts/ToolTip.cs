@@ -27,12 +27,12 @@ public class ToolTip : MonoBehaviour
         BG.gameObject.SetActive(true);
         TTText.text = mess;
         BG.transform.localScale = Vector3.zero;
-        BG.transform.DOScale(1, 0.5f);
+        BG.transform.DOScale(1, 0.1f).SetEase(Ease.OutBounce);
     }
 
     public void Hide()
     {
-        BG.transform.DOScale(0, 0.5f).OnComplete(()=> { BG.gameObject.SetActive(false); });
+        BG.transform.DOScale(0, 0.1f).SetEase(Ease.InFlash).OnComplete(()=> { BG.gameObject.SetActive(false); });
         
     }
 }

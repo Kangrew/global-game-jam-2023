@@ -26,7 +26,7 @@ MonoBehaviour:
   drawGizmos: 1
   defaultRecyclable: 0
   defaultAutoPlay: 3
-  defaultUpdateType: 0
+  defaultUpdateType: 2
   defaultTimeScaleIndependent: 0
   defaultEaseType: 6
   defaultEaseOvershootOrAmplitude: 1.70158
@@ -50,5 +50,5 @@ MonoBehaviour:
     deUnityExtendedEnabled: 0
     epoOutlineEnabled: 0
   createASMDEF: 0
-  showPlayingTweens: 0
-  showPausedTweens: 0
+  showPlayingTweens: 1
+  showPausedTweens: 1

@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Ginger Paste
   m_EditorClassIdentifier: 
   _ingredientName: Ginger Paste
+  _ingredientToolTip: 
   _cost: 1
+  _ingredientColor: {r: 0.8773585, g: 0.5062281, b: 0.22678883, a: 1}
+  _ingredientDarkcolor: {r: 0.5377358, g: 0.28051132, b: 0.088269815, a: 1}

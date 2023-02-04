@@ -147,11 +147,11 @@ MonoBehaviour:
   IsDragable: 1
   ToolTipText: This is POT, put the INGREDIENT in this to cook shit
   DishType: 1
-  CookingPlane: {fileID: 7835915274028646277}
   FillLevels:
   - {fileID: 2526093754157681037}
   - {fileID: 4376947699546021795}
   - {fileID: 3323227353330283679}
+  IngInContainer: {fileID: 2100000, guid: 5d811d1e0b958a1449c099b2708f0651, type: 2}
   drag: {fileID: 0}
   ContainerOrginalPos: {x: 0, y: 0, z: 0}
   _canCook: 1
@@ -1784,7 +1784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8449683921295234514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.113, z: 0}
+  m_LocalPosition: {x: 0, y: 0.141, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

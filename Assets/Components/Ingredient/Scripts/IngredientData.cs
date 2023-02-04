@@ -8,9 +8,12 @@ public class IngredientData : ScriptableObject
     [SerializeField] private string _ingredientName;
     [SerializeField] private string _ingredientToolTip;
     [SerializeField] private int _cost;
+    [SerializeField] private Color _ingredientColor,_ingredientDarkcolor;
 
     public string IngredientName => _ingredientName;
     public int Cost => _cost;
     public string IngredientToolTip => _ingredientToolTip;
+    public Color IngredientColor => _ingredientColor;
+    public Color IngredientDarkColor => _ingredientDarkcolor;
 
 }

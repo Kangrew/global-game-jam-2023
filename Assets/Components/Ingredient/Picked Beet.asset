@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Picked Beet
   m_EditorClassIdentifier: 
   _ingredientName: Picked Beet
+  _ingredientToolTip: 
   _cost: 1
+  _ingredientColor: {r: 0.764151, g: 0.19031683, b: 0.2916217, a: 1}
+  _ingredientDarkcolor: {r: 0.4245283, g: 0.10172657, b: 0.15700094, a: 1}

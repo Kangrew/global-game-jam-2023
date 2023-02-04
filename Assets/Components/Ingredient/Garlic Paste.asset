@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Garlic Paste
   m_EditorClassIdentifier: 
   _ingredientName: Garlic Paste
+  _ingredientToolTip: 
   _cost: 1
+  _ingredientColor: {r: 1, g: 0.99328035, b: 0.61698115, a: 1}
+  _ingredientDarkcolor: {r: 0.7264151, g: 0.69446975, b: 0.31112495, a: 1}
