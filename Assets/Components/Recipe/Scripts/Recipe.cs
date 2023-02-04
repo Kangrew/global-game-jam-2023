@@ -19,6 +19,10 @@ public class Recipe
     public Recipe(DishType type) => _type = type;
     public List<IngredientData> Ingredients => _ingredients;
 
-    public void AddIngredient(IngredientData ingredient) => _ingredients.Add(ingredient);
+    public void AddIngredient(IngredientData ingredient) 
+    {
+        _ingredients.Add(ingredient);
+        CashController.Instance.Deduct(ingredient.Cost);
+    }
 
 }

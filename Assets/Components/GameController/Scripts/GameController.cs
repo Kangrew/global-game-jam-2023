@@ -7,6 +7,9 @@ public class GameController : Singleton<GameController>
     private const int _badIngredientScore = -2;
     private const int _goodScore = 4;
     private const int _neutralScore = 2;
+    private const int _saladPrice = 12;
+    private const int _soupPrice = 14;
+    private const int _stirFryPrice = 16;
 
     private int _day = 0;
     private int _completedOrders = 0;
@@ -63,6 +66,10 @@ public class GameController : Singleton<GameController>
         _ordersCompletedToday++;
         _completedOrders++;
         _dailyRating += (int)feedback;
+
+        if(_orderData[_completedOrders].Dishtype == Recipe.DishType.Salad) CashController.Instance.Credit(_saladPrice);
+        else if(_orderData[_completedOrders].Dishtype == Recipe.DishType.Soup) CashController.Instance.Credit(_soupPrice);
+        else if(_orderData[_completedOrders].Dishtype == Recipe.DishType.StirFry) CashController.Instance.Credit(_stirFryPrice);
         
         if(feedback == Order.Feedback.Good) 
             NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].GoodFeedback);
