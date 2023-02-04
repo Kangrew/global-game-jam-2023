@@ -73,15 +73,14 @@ public class Stove : MonoBehaviour
     public void PlaceContainerOnStove()
     {
         ContainerPlaced.transform.position = PlaceHolder.position;
-        //ContainerPlaced.transform.DOPunchScale(new Vector3(0.5f,0.7f,0.3f),0.5f);
+        ContainerPlaced.transform.DOPunchScale(new Vector3(0.3f,0.5f,0.3f),0.6f);
         //ContainerPlaced.transform.DOScale(1.5f, 0.5f).SetEase(Ease.InOutBounce).SetLoops(2,LoopType.Yoyo);
         ContainerPlaced.OnStove = true;
         ContainerPlaced.drag.CanDrag = true;
     }
     private void PushContainerToOrginalPos()
     {
-        Debug.Log("push");
-        ContainerPlaced.transform.DOMove(ContainerPlaced.ContainerOrginalPos, 0.5f).SetEase(Ease.OutElastic);
+        ContainerPlaced.transform.DOMove(ContainerPlaced.ContainerOrginalPos, 0.1f).SetEase(Ease.OutElastic);
         //ContainerPlaced.transform.position = ContainerPlaced.ContainerOrginalPos;
 
         ContainerPlaced.drag.CanDrag = true;

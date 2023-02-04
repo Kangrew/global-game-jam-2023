@@ -32,3 +32,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 754df816f14c01543b3a67ad97c6a311, type: 2}
   _badIngredients:
   - {fileID: 11400000, guid: 1a8f4dbd42acc904f9829a3bd7bbc976, type: 2}
+  - {fileID: 11400000, guid: 07f80ee697ab7bb409014f262ed844dc, type: 2}
+  - {fileID: 11400000, guid: b24c3c28793483545a53c724d1632d68, type: 2}
+  - {fileID: 11400000, guid: 0b10334b6cde2c94a8d4a2de53ddd5d0, type: 2}

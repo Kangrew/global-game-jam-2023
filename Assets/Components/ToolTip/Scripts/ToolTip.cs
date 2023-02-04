@@ -11,6 +11,7 @@ public class ToolTip : MonoBehaviour
 
     public Image BG;
     public TextMeshProUGUI TTText;
+    public bool Stop;
 
     private void Awake()
     {
@@ -23,16 +24,24 @@ public class ToolTip : MonoBehaviour
 
     public void Show(string mess)
     {
-        DOTween.CompleteAll();
+        //DOTween.CompleteAll();
+        if(Stop)
+        return;
         BG.gameObject.SetActive(true);
         TTText.text = mess;
-        BG.transform.localScale = Vector3.zero;
-        BG.transform.DOScale(1, 0.1f).SetEase(Ease.OutBounce);
+        // BG.transform.localScale = Vector3.zero;
+        // BG.transform.DOScale(1, 0.1f).SetEase(Ease.OutBounce);
     }
 
     public void Hide()
     {
-        BG.transform.DOScale(0, 0.1f).SetEase(Ease.InFlash).OnComplete(()=> { BG.gameObject.SetActive(false); });
-        
+        if(Stop)
+        return;
+        //BG.transform.DOScale(0, 0.1f).SetEase(Ease.InFlash).OnComplete(()=> { BG.gameObject.SetActive(false); });
+        BG.gameObject.SetActive(false);
+    }
+
+    public void SetStop(bool v){
+        Stop = v;
     }
 }

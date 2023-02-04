@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0faf590b7d2800945a9bc5c4f84c44f2, type: 3}
   m_Name: Picked Beet
   m_EditorClassIdentifier: 
-  _ingredientName: Picked Beet
-  _ingredientToolTip: 
-  _cost: 1
+  _ingredientName: Pickled Beet
+  _ingredientToolTip: Sour, Sweet and Crunchy
+  _cost: 3
   _ingredientColor: {r: 0.764151, g: 0.19031683, b: 0.2916217, a: 1}
   _ingredientDarkcolor: {r: 0.4245283, g: 0.10172657, b: 0.15700094, a: 1}

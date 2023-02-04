@@ -109,11 +109,12 @@ public class DragAndDrop : MonoBehaviour
         {
             //Debug.Log("Dragging");
             float y = transform.position.y;
-            transform.position = new Vector3(
-                    hit.point.x,
-                    hit.point.y,
-                    hit.point.z
-            );
+            // transform.position = new Vector3(
+            //         hit.point.x,
+            //         hit.point.y,
+            //         hit.point.z
+            // );
+            transform.position = hit.point + (hit.normal * 0.1f);
         }
         On_Drag?.Invoke();
 

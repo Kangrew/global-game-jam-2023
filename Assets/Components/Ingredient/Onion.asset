@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Onion
   m_EditorClassIdentifier: 
   _ingredientName: Onion
-  _ingredientToolTip: 
-  _cost: 1
+  _ingredientToolTip: Makes you cry
+  _cost: 2
   _ingredientColor: {r: 0.90903765, g: 0.63584906, b: 1, a: 1}
   _ingredientDarkcolor: {r: 0.43317908, g: 0.3733713, b: 0.4528302, a: 1}

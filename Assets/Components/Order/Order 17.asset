@@ -16,10 +16,10 @@ MonoBehaviour:
     _content: Can I have a bowl of raw roots without the eye watery stuff please!!!
     _emoji: 0
   _goodFeedback:
-    _content: The chef knows this roots!!!
+    _content: The chef knows his roots!!!
     _emoji: 2
   _neutralFeedback:
-    _content: Didn't meet my expectation but not bad for the price...
+    _content: Didn't meet my expectations but not bad for the price...
     _emoji: 4
   _badFeedback:
     _content: Get a better Chef!!!

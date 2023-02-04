@@ -28,6 +28,7 @@ public class Ingredient : MonoBehaviour
 
     private void OnDrag_Func()
     {
+        
 
     }
     private void OnDragStart_Func()
@@ -63,7 +64,7 @@ public class Ingredient : MonoBehaviour
     }
     private void OnEnterHover_Func()
     {
-        ToolTip.instance.Show( $"{Data.IngredientName} - {ToolTipText}");
+        ToolTip.instance.Show( $"{Data.IngredientName} - ${Data.Cost} {Data.IngredientToolTip}");
     }
     private void OnExitHover_Func()
     {

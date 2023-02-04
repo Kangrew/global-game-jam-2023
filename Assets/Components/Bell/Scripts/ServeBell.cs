@@ -29,5 +29,6 @@ public class ServeBell : MonoBehaviour
     {
         FindObjectOfType<Stove>().ResetStove();
         FindObjectOfType<ServingBowl>().SummitOrder();
+        gameObject.SetActive(false);
     }
 }

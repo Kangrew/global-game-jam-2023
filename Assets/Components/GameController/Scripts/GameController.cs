@@ -8,9 +8,9 @@ public class GameController : Singleton<GameController>
     private const int _badIngredientScore = -2;
     private const int _goodScore = 4;
     private const int _neutralScore = 2;
-    private const int _saladPrice = 12;
-    private const int _soupPrice = 14;
-    private const int _stirFryPrice = 16;
+    private const int _saladPrice = 10;
+    private const int _soupPrice = 10;
+    private const int _stirFryPrice = 10;
 
     private int _day = 0;
     private int _completedOrders = 0;
@@ -45,18 +45,24 @@ public class GameController : Singleton<GameController>
     public void CompleteOrder(Recipe recipe)
     {
         int score = recipe.Ingredients.Count;
-
+        //Debug.Log("start of the score " + score);
         foreach(IngredientData ingredient in _orderData[_completedOrders].GoodIngredients)
         {
             if(recipe.Ingredients.Contains(ingredient)) score += _goodIngredientScore;
         }
+        //Debug.Log("after good ingredients " + score);
 
-        foreach(IngredientData ingredient in _orderData[_completedOrders].GoodIngredients)
+
+        foreach(IngredientData ingredient in _orderData[_completedOrders].BadIngredients)
         {
             if(recipe.Ingredients.Contains(ingredient)) score += _badIngredientScore;
         }
+        //Debug.Log("after bad ingredients " + score);
+
 
         if(recipe.Type != _orderData[_completedOrders].Dishtype) score = _neutralScore - 1;
+        //Debug.Log("after _neutralScore " + score);
+
 
         Order.Feedback feedback;
 

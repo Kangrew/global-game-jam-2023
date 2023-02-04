@@ -61,7 +61,6 @@ public class Container : MonoBehaviour
                 //    transform.position.y,
                 //    transform.position.z);
                 //transform.SetParent(hit.collider.transform);
-                Debug.Log("vvv");
                 if (!stove.PlaceContainer(this)) { 
                     transform.position = dragStartPos;
                 
@@ -71,6 +70,9 @@ public class Container : MonoBehaviour
             else if (hit.collider.TryGetComponent<ServingBowl>(out ServingBowl bowl))
             {
                 bowl.FillBowl(this);
+            }else if(hit.collider.TryGetComponent<TrashCan>(out TrashCan can)){
+                ThrowDish();
+                can.transform.DOPunchScale(new Vector3(-0.2f,0.3f,0.4f),1);
             }
         }
 
@@ -109,13 +111,14 @@ public class Container : MonoBehaviour
         if (DishType == Recipe.DishType.StirFry) IngInContainer.color = data.IngredientDarkColor;
 
         SelectLevel(currentRecipe.Ingredients.Count - 1);
+        transform.DOPunchScale(new Vector3(0.2f,0.4f,0.4f),0.7f);
     }
     private void InitiateRecipe()
     {
         currentRecipe = new Recipe(DishType);
         //CookingPlane.SetActive(true);
-        CookingUI.Instance.ThrowButton.gameObject.SetActive(true);
-        CookingUI.Instance.ThrowButton.onClick.AddListener(ThrowDish);
+        //CookingUI.Instance.ThrowButton.gameObject.SetActive(true);
+        //CookingUI.Instance.ThrowButton.onClick.AddListener(ThrowDish);
     }
 
     public void SummitOrder()
