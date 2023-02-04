@@ -8,6 +8,8 @@ public class Ingredient : MonoBehaviour
     public string ToolTipText;
     DragAndDrop drag;
     Vector3 dragStartPos;
+
+    public IngredientData Data;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,14 +43,18 @@ public class Ingredient : MonoBehaviour
         {
             if(hit.collider.TryGetComponent<Container>(out Container contain))
             {
-                transform.position = hit.collider.transform.position;
-                transform.position = new Vector3(
-                    transform.position.x,
-                    transform.position.y + transform.localScale.y/2,
-                    transform.position.z );
-                transform.SetParent(hit.collider.transform);
-                drag.CanDrag = false;
-                return;
+                //transform.position = hit.collider.transform.position;
+                //transform.position = new Vector3(
+                //    transform.position.x,
+                //    transform.position.y + transform.localScale.y/2,
+                //    transform.position.z );
+                //transform.SetParent(hit.collider.transform);
+                //drag.CanDrag = false;
+                //return;
+                if (contain.OnStove)
+                {
+                    contain.AddIngredient(Data); 
+                }
             }
         }
 
@@ -57,7 +63,7 @@ public class Ingredient : MonoBehaviour
     }
     private void OnEnterHover_Func()
     {
-        ToolTip.instance.Show(ToolTipText);
+        ToolTip.instance.Show( $"{Data.IngredientName} - {ToolTipText}");
     }
     private void OnExitHover_Func()
     {

@@ -6,8 +6,11 @@ using UnityEngine;
 public class IngredientData : ScriptableObject
 {
     [SerializeField] private string _ingredientName;
+    [SerializeField] private string _ingredientToolTip;
     [SerializeField] private int _cost;
 
     public string IngredientName => _ingredientName;
     public int Cost => _cost;
+    public string IngredientToolTip => _ingredientToolTip;
+
 }

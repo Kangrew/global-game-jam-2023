@@ -9,17 +9,22 @@ public class DragAndDrop : MonoBehaviour
     public bool CanDrag = true, NeedHover = true;
     private bool IsDragging;
     private Vector2 currentPos, previousPos;
+    private LayerMask TableExection;
 
     //hover update
     private bool isHovering;
 
-    public event Action On_Drag, On_DragStart, On_DragEnd, On_EnterHover, On_ExitHover;
+    public event Action On_Drag, On_DragStart, On_DragEnd, On_EnterHover, On_ExitHover, On_ClickRelease;
     private void Start()
     {
-
+        
     }
     private void Update()
     {
+        if (IsClickReleaseOnObject())
+        {
+            On_ClickRelease?.Invoke();
+        }
         if (NeedHover)
         {
             if (!isHovering && IsMouseOnObject())
@@ -70,8 +75,9 @@ public class DragAndDrop : MonoBehaviour
     {
         Vector2 touchPosition = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(touchPosition);
-
-        if(Physics.Raycast(ray,out RaycastHit hit, 1000))
+        int lm = 1 << LayerMask.NameToLayer("Table");
+        lm = ~lm;
+        if (Physics.Raycast(ray,out RaycastHit hit, 1000, lm))
         {
             if(hit.collider.gameObject == gameObject)
             {
@@ -88,17 +94,24 @@ public class DragAndDrop : MonoBehaviour
         else
             return false;
     }
+    private bool IsClickReleaseOnObject()
+    {
+        if (Input.GetMouseButtonUp(0))
+            return IsMouseOnObject();
+        else
+            return false;
+    }
     private void OnDragging()
     {
         Vector2 touchPosition = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(touchPosition);
         if(Physics.Raycast(ray,out RaycastHit hit, 1000, 1 << LayerMask.NameToLayer("Table")))
         {
-            Debug.Log("Dragging");
+            //Debug.Log("Dragging");
             float y = transform.position.y;
             transform.position = new Vector3(
                     hit.point.x,
-                    y,
+                    hit.point.y,
                     hit.point.z
             );
         }
@@ -107,12 +120,12 @@ public class DragAndDrop : MonoBehaviour
     }
     private void OnStartDrag()
     {
-        Debug.Log("start Dragging");
+        //Debug.Log("start Dragging");
         On_DragStart?.Invoke();
     }
     private void OnEndDrag()
     {
-        Debug.Log("End Dragging");
+        //Debug.Log("End Dragging");
         On_DragEnd?.Invoke();
     }
 

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,21 @@ public class Container : MonoBehaviour
 {
     public bool IsDragable;
     public string ToolTipText;
-    DragAndDrop drag;
+    public Recipe.DishType DishType;
+    public GameObject CookingPlane;
+    public DragAndDrop drag;
     Vector3 dragStartPos;
+
+    public Vector3 ContainerOrginalPos;
+
+    public Recipe currentRecipe;
+
+    [SerializeField]private bool _canCook;
+    private bool _onStove;
+
+    public bool CanCook => _canCook;
+    public bool OnStove { get { return _onStove; } set { _onStove = value; } }
+    public bool HasRecipe {  get { return currentRecipe != null; } }
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +36,9 @@ public class Container : MonoBehaviour
             drag.On_DragEnd += OnDragEnd_Func;
         }else
             drag.CanDrag = false;
+        ContainerOrginalPos = transform.position;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     private void OnDragStart_Func()
     {
@@ -41,16 +52,23 @@ public class Container : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, 1000, 1 << LayerMask.NameToLayer("Stove")))
         {
-            if (hit.collider.TryGetComponent<Stove>(out Stove contain))
+            if (hit.collider.TryGetComponent<Stove>(out Stove stove))
             {
-                transform.position = contain.PlaceHolder.position;
+                //transform.position = contain.PlaceHolder.position;
                 //transform.position = new Vector3(
                 //    transform.position.x,
                 //    transform.position.y,
                 //    transform.position.z);
-                transform.SetParent(hit.collider.transform);
-                if (IsDragable) drag.CanDrag = false;
+                //transform.SetParent(hit.collider.transform);
+                if (!stove.PlaceContainer(this)) { 
+                    transform.position = dragStartPos;
+                
+                } else if (IsDragable) drag.CanDrag = true;
                 return;
+            }
+            else if (hit.collider.TryGetComponent<ServingBowl>(out ServingBowl bowl))
+            {
+                bowl.FillBowl(this);
             }
         }
 
@@ -60,10 +78,57 @@ public class Container : MonoBehaviour
     private void OnEnterHover_Func()
     {
         ToolTip.instance.Show(ToolTipText);
+        Debug.Log("on enter hover");
     }
     private void OnExitHover_Func()
     {
         ToolTip.instance.Hide();
     }
+
+    public void PushToOrginalPos() {  
+        transform.DOMove(ContainerOrginalPos, 0.1f);
+        drag.CanDrag = true;
+        _onStove = false;
+    }
+    public void PlaceOnStove(Vector3 pos) {  
+        transform.position = pos;
+        transform.DOPunchScale(Vector3.one,30);
+        _onStove = true;
+    }
+
+    public void AddIngredient(IngredientData data)
+    {
+        if (currentRecipe == null)
+        {
+            InitiateRecipe(); 
+        }
+        currentRecipe.AddIngredient(data);
+    }
+    private void InitiateRecipe()
+    {
+        currentRecipe = new Recipe(DishType);
+        CookingPlane.SetActive(true);
+        CookingUI.Instance.deliveryButton.gameObject.SetActive(true);
+        CookingUI.Instance.deliveryButton.onClick.AddListener(SummitOrder);
+        CookingUI.Instance.ThrowButton.gameObject.SetActive(true);
+        CookingUI.Instance.ThrowButton.onClick.AddListener(ThrowDish);
+    }
+
+    public void SummitOrder()
+    {
+        if(currentRecipe != null)
+        {
+            GameController.Instance.CompleteOrder(currentRecipe);
+            CookingUI.Instance.deliveryButton.gameObject.SetActive(false);
+        }
+    }
+
+    public void ThrowDish()
+    {
+        currentRecipe = null;
+        CookingPlane.SetActive(false);
+    }
+
+
 
 }
