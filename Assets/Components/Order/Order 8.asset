@@ -17,14 +17,15 @@ MonoBehaviour:
       beets???
     _emoji: 3
   _goodFeedback:
-    _content: 
+    _content: Perfectly cooked roots!!!
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: It was Okay...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: Nasty!!!
     _emoji: 1
   _dishtype: 1
   _goodIngredients: []
-  _badIngredients: []
+  _badIngredients:
+  - {fileID: 11400000, guid: fed450743959a55428c5cd154ebbf21a, type: 2}

@@ -17,14 +17,15 @@ MonoBehaviour:
       up. That's all...
     _emoji: 0
   _goodFeedback:
-    _content: 
+    _content: Loved it!!!
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: Nothing impressive abot these roots...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: Nope...
     _emoji: 1
   _dishtype: 0
   _goodIngredients: []
-  _badIngredients: []
+  _badIngredients:
+  - {fileID: 11400000, guid: 0b10334b6cde2c94a8d4a2de53ddd5d0, type: 2}

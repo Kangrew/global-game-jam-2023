@@ -17,14 +17,16 @@ MonoBehaviour:
       soup...
     _emoji: 0
   _goodFeedback:
-    _content: 
+    _content: I was so good that I forgot about my pain...
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: Could have been better
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: I regret ordering this food!!!
     _emoji: 1
   _dishtype: 1
   _goodIngredients: []
-  _badIngredients: []
+  _badIngredients:
+  - {fileID: 11400000, guid: fed450743959a55428c5cd154ebbf21a, type: 2}
+  - {fileID: 11400000, guid: 950b8167f4e0df147a1e04f20f6139cb, type: 2}

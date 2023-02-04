@@ -16,14 +16,16 @@ MonoBehaviour:
     _content: Great soups have a lot of starch in them!!!
     _emoji: 0
   _goodFeedback:
-    _content: 
+    _content: Starchyyyy!!!
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: Could have had more starch to be honest...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: Looks like the checf messed up my order!!!
     _emoji: 1
   _dishtype: 1
-  _goodIngredients: []
+  _goodIngredients:
+  - {fileID: 11400000, guid: 69876ce1ca223554883136b31df0afc7, type: 2}
+  - {fileID: 11400000, guid: 754df816f14c01543b3a67ad97c6a311, type: 2}
   _badIngredients: []

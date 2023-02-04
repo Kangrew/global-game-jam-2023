@@ -16,13 +16,13 @@ MonoBehaviour:
     _content: Stir fries are great!!! Can I have one?
     _emoji: 0
   _goodFeedback:
-    _content: 
+    _content: Stirrific!!!
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: Passable...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: THIS CANNOT BE CALLED A STIR FRY!!!
     _emoji: 1
   _dishtype: 2
   _goodIngredients: []

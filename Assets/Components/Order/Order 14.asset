@@ -18,13 +18,13 @@ MonoBehaviour:
       roots.
     _emoji: 0
   _goodFeedback:
-    _content: 
+    _content: Very nutritious and satisfying!!!
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: Not the perfect meal but not too bad either...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: Not nutritious at all!!!
     _emoji: 1
   _dishtype: 0
   _goodIngredients: []

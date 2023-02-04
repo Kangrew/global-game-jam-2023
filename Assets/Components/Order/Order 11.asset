@@ -16,14 +16,16 @@ MonoBehaviour:
     _content: Why do people add pickles to salads??? Doesn't even make sense to me...
     _emoji: 0
   _goodFeedback:
-    _content: 
+    _content: This is my new favourite place!!!
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: Might come again if I have no other options...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: Even pickes taste better than this!!!
     _emoji: 1
   _dishtype: 0
   _goodIngredients: []
-  _badIngredients: []
+  _badIngredients:
+  - {fileID: 11400000, guid: fed450743959a55428c5cd154ebbf21a, type: 2}
+  - {fileID: 11400000, guid: 1a8f4dbd42acc904f9829a3bd7bbc976, type: 2}

@@ -16,14 +16,22 @@ MonoBehaviour:
     _content: I just want some raw potatoes man... Any kind will do...
     _emoji: 0
   _goodFeedback:
-    _content: 
+    _content: Perfecto Potato!!!
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: Not too bad...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: THIS IS NOT WHAT I ORDERED!!!
     _emoji: 1
   _dishtype: 0
-  _goodIngredients: []
-  _badIngredients: []
+  _goodIngredients:
+  - {fileID: 11400000, guid: 69876ce1ca223554883136b31df0afc7, type: 2}
+  - {fileID: 11400000, guid: 754df816f14c01543b3a67ad97c6a311, type: 2}
+  _badIngredients:
+  - {fileID: 11400000, guid: 950b8167f4e0df147a1e04f20f6139cb, type: 2}
+  - {fileID: 11400000, guid: b24c3c28793483545a53c724d1632d68, type: 2}
+  - {fileID: 11400000, guid: 07f80ee697ab7bb409014f262ed844dc, type: 2}
+  - {fileID: 11400000, guid: 0b10334b6cde2c94a8d4a2de53ddd5d0, type: 2}
+  - {fileID: 11400000, guid: fed450743959a55428c5cd154ebbf21a, type: 2}
+  - {fileID: 11400000, guid: 1a8f4dbd42acc904f9829a3bd7bbc976, type: 2}

@@ -17,14 +17,19 @@ MonoBehaviour:
       the strong flavors?
     _emoji: 4
   _goodFeedback:
-    _content: 
+    _content: I am feeling so much better now!!!
     _emoji: 0
   _neutralFeedback:
-    _content: 
+    _content: It was alright...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: I feel more sick now!!!
     _emoji: 1
   _dishtype: 1
   _goodIngredients: []
-  _badIngredients: []
+  _badIngredients:
+  - {fileID: 11400000, guid: b24c3c28793483545a53c724d1632d68, type: 2}
+  - {fileID: 11400000, guid: 07f80ee697ab7bb409014f262ed844dc, type: 2}
+  - {fileID: 11400000, guid: 0b10334b6cde2c94a8d4a2de53ddd5d0, type: 2}
+  - {fileID: 11400000, guid: fed450743959a55428c5cd154ebbf21a, type: 2}
+  - {fileID: 11400000, guid: 1a8f4dbd42acc904f9829a3bd7bbc976, type: 2}

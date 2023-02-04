@@ -16,14 +16,15 @@ MonoBehaviour:
     _content: Can I have a bowl of raw roots without the eye watery stuff please!!!
     _emoji: 0
   _goodFeedback:
-    _content: 
+    _content: The chef knows this roots!!!
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: Didn't meet my expectation but not bad for the price...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: Get a better Chef!!!
     _emoji: 1
   _dishtype: 0
   _goodIngredients: []
-  _badIngredients: []
+  _badIngredients:
+  - {fileID: 11400000, guid: 0b10334b6cde2c94a8d4a2de53ddd5d0, type: 2}

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameController : Singleton<GameController>
 {
+    private const int _totalDays = 4;
     private const int _goodIngredientScore = 1;
     private const int _badIngredientScore = -2;
     private const int _goodScore = 4;
@@ -24,6 +25,7 @@ public class GameController : Singleton<GameController>
 
     private void Start()
     {
+        Shuffle<Order>(_orderData);
         InitiateTutorial();
     }
 
@@ -61,6 +63,13 @@ public class GameController : Singleton<GameController>
         if(score >= _goodScore) feedback = Order.Feedback.Good;
         else if (score >= _neutralScore) feedback = Order.Feedback.Neutral;
         else feedback = Order.Feedback.Bad;
+        
+        if(feedback == Order.Feedback.Good) 
+            NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].GoodFeedback);
+        else if(feedback == Order.Feedback.Neutral) 
+            NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].NeutralFeedback);
+        else 
+            NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].BadFeedback);
 
         _ordersCompletedToday++;
         _completedOrders++;
@@ -69,13 +78,6 @@ public class GameController : Singleton<GameController>
         if(_orderData[_completedOrders].Dishtype == Recipe.DishType.Salad) CashController.Instance.Credit(_saladPrice);
         else if(_orderData[_completedOrders].Dishtype == Recipe.DishType.Soup) CashController.Instance.Credit(_soupPrice);
         else if(_orderData[_completedOrders].Dishtype == Recipe.DishType.StirFry) CashController.Instance.Credit(_stirFryPrice);
-        
-        if(feedback == Order.Feedback.Good) 
-            NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].GoodFeedback);
-        else if(feedback == Order.Feedback.Neutral) 
-            NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].NeutralFeedback);
-        else 
-            NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].BadFeedback);
     }
 
     private void EndDay()
@@ -89,7 +91,7 @@ public class GameController : Singleton<GameController>
         _dailyRating = 0;
         _ordersCompletedToday = 0;
 
-        if(_day >= 5) 
+        if(_day >= _totalDays) 
         {
             _gameOverScreen.SetActive(true);
             return;
@@ -97,5 +99,17 @@ public class GameController : Singleton<GameController>
 
         var note = new Order.Note("Day " + (_day + 1), Emotions.State.Default);
         _dayNote.UpdateContent(note);
+    }
+
+    public void Shuffle<T>(IList<T> list)  
+    {
+        int n = list.Count;  
+        while (n > 1) {  
+            n--;  
+            int k = Random.Range(0 , n);  
+            T value = list[k];  
+            list[k] = list[n];  
+            list[n] = value;  
+        }  
     }
 }

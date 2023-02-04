@@ -17,14 +17,18 @@ MonoBehaviour:
       sweet stuff of course... Anyways, can I have some salad please...
     _emoji: 3
   _goodFeedback:
-    _content: 
+    _content: A true delicacy!!!
     _emoji: 2
   _neutralFeedback:
-    _content: 
+    _content: Very average...
     _emoji: 4
   _badFeedback:
-    _content: 
+    _content: These roots are not for consumption!!!
     _emoji: 1
   _dishtype: 0
-  _goodIngredients: []
-  _badIngredients: []
+  _goodIngredients:
+  - {fileID: 11400000, guid: 950b8167f4e0df147a1e04f20f6139cb, type: 2}
+  - {fileID: 11400000, guid: fed450743959a55428c5cd154ebbf21a, type: 2}
+  - {fileID: 11400000, guid: 754df816f14c01543b3a67ad97c6a311, type: 2}
+  _badIngredients:
+  - {fileID: 11400000, guid: 1a8f4dbd42acc904f9829a3bd7bbc976, type: 2}
