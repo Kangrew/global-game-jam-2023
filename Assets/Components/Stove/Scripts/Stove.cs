@@ -35,7 +35,6 @@ public class Stove : MonoBehaviour
     }
     private void OnClickReleased_Func()
     {
-        Debug.Log("Clicked!!!!");
         StoveOnAndOff();
     }
 

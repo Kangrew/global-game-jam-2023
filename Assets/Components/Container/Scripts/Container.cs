@@ -9,6 +9,7 @@ public class Container : MonoBehaviour
     public string ToolTipText;
     public Recipe.DishType DishType;
     public GameObject CookingPlane;
+    public GameObject[] FillLevels;
     public DragAndDrop drag;
     Vector3 dragStartPos;
 
@@ -103,13 +104,12 @@ public class Container : MonoBehaviour
             InitiateRecipe(); 
         }
         currentRecipe.AddIngredient(data);
+        SelectLevel(currentRecipe.Ingredients.Count - 1);
     }
     private void InitiateRecipe()
     {
         currentRecipe = new Recipe(DishType);
-        CookingPlane.SetActive(true);
-        CookingUI.Instance.deliveryButton.gameObject.SetActive(true);
-        CookingUI.Instance.deliveryButton.onClick.AddListener(SummitOrder);
+        //CookingPlane.SetActive(true);
         CookingUI.Instance.ThrowButton.gameObject.SetActive(true);
         CookingUI.Instance.ThrowButton.onClick.AddListener(ThrowDish);
     }
@@ -119,16 +119,27 @@ public class Container : MonoBehaviour
         if(currentRecipe != null)
         {
             GameController.Instance.CompleteOrder(currentRecipe);
-            CookingUI.Instance.deliveryButton.gameObject.SetActive(false);
         }
     }
 
     public void ThrowDish()
     {
         currentRecipe = null;
-        CookingPlane.SetActive(false);
+        //CookingPlane.SetActive(false);
+        SelectLevel(-1);
     }
 
+    public void SelectLevel(int x)
+    {
+        for (int i = 0; i < FillLevels.Length; i++)
+        {
+            if (i <= x)
+            {
+                FillLevels[i].SetActive(true);
+            }else
+                FillLevels[i].SetActive(false);
+        }
+    }
 
 
 }
