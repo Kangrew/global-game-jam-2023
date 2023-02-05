@@ -64,7 +64,7 @@ public class Ingredient : MonoBehaviour
     }
     private void OnEnterHover_Func()
     {
-        ToolTip.instance.Show( $"{Data.IngredientName} - ${Data.Cost} {Data.IngredientToolTip}");
+        ToolTip.instance.Show( $"{Data.IngredientName}  |  ${Data.Cost}  |  {Data.IngredientToolTip}");
     }
     private void OnExitHover_Func()
     {

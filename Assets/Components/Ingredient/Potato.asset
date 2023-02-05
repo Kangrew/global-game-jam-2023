@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Potato
   m_EditorClassIdentifier: 
   _ingredientName: Potato
-  _ingredientToolTip: Soft and Starchy
+  _ingredientToolTip: <color=#f4c2c2>Soft</color> and <color=grey>Starchy</color>
   _cost: 1
   _ingredientColor: {r: 0.9811321, g: 0.7190432, b: 0.41096473, a: 1}
   _ingredientDarkcolor: {r: 0.6320754, g: 0.25806874, b: 0.06797788, a: 1}

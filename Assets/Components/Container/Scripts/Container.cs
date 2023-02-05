@@ -72,6 +72,7 @@ public class Container : MonoBehaviour
                 bowl.FillBowl(this);
             }else if(hit.collider.TryGetComponent<TrashCan>(out TrashCan can)){
                 ThrowDish();
+                Debug.Log(can.name);
                 can.transform.DOPunchScale(new Vector3(-0.2f,0.3f,0.4f),1);
                 SoundBox.Instance.PlaySound(SoundBox.Instance.countainer.TrashCan,transform.position);
             }

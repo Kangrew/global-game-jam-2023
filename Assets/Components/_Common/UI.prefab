@@ -1740,7 +1740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 744, y: 482}
+  m_AnchoredPosition: {x: 600, y: 482}
   m_SizeDelta: {x: 374.83, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8177079048196137519
@@ -3613,8 +3613,8 @@ MonoBehaviour:
     _emoji: 0
   - _dialogue: And I will be assisting you in your job!.
     _emoji: 2
-  - _dialogue: We make 3 dishes in our kitchen, all for the price of $10 (1) Salads 
-      (2) Soups  (3) Stir Fries.
+  - _dialogue: We make 3 dishes in our kitchen, all for the price of $10. That is
+      Salads,Soups and Stir Fries.
     _emoji: 0
   - _dialogue: We customize these dishes based on the likes and dislikes of our customers....
     _emoji: 2
@@ -3623,14 +3623,14 @@ MonoBehaviour:
     _emoji: 0
   - _dialogue: But I completely trust you to undertand their needs....
     _emoji: 3
-  - _dialogue: Our goal for the next four days is to make a profit while also keeping
-      our customers happy!.
+  - _dialogue: Our goal for the next four days is  keeping our customers happy without
+      going into a loss.
     _emoji: 0
   - _dialogue: Good Reviews will give us more customers, while bad reviews reduce
       the amount of customers we will get...
     _emoji: 2
-  - _dialogue: Adding more ingredients and satisfying the customer expectations will
-      get us good reviews....
+  - _dialogue: Adding more ingredients (around 3-4 should do the trick) and satisfying
+      the customer expectations will get us good reviews....
     _emoji: 0
   - _dialogue: Anyways... Let us get started for today!!
     _emoji: 2
@@ -5542,7 +5542,7 @@ PrefabInstance:
     - target: {fileID: 5493216975439632935, guid: ddfbe2db81cd74c4a98f8984793d0ff2, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 7c300d229833e8e4b85faf39e16832ec, type: 2}
+      objectReference: {fileID: 11400000, guid: 8221c3821d218894cb1b062ff2d015b0, type: 2}
     - target: {fileID: 5493216975439632935, guid: ddfbe2db81cd74c4a98f8984793d0ff2, type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
@@ -5645,7 +5645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493216976742797173, guid: ddfbe2db81cd74c4a98f8984793d0ff2, type: 3}
       propertyPath: Stop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5493216976742797175, guid: ddfbe2db81cd74c4a98f8984793d0ff2, type: 3}
       propertyPath: m_Name

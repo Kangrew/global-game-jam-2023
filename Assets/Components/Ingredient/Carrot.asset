@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carrot
   m_EditorClassIdentifier: 
   _ingredientName: Carrot
-  _ingredientToolTip: Sweet and Crunchy
+  _ingredientToolTip: <color=yellow>Sweet</color> and <color=#a52a2aff>Crunchy</color>
   _cost: 2
   _ingredientColor: {r: 1, g: 0.28040087, b: 0, a: 1}
   _ingredientDarkcolor: {r: 0.5943396, g: 0.20966138, b: 0.05831255, a: 1}

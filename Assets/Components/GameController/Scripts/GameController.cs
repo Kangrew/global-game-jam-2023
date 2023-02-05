@@ -12,7 +12,7 @@ public class GameController : Singleton<GameController>
     private const int _soupPrice = 8;
     private const int _stirFryPrice = 8;
     private const float _timeReductionPerDay = 5f;
-    private const float _startingTime = 30f;
+    private const float _startingTime = 40f;
     private const int _disappointedScoreDeduction = 14;
     private const int _unimpressedScoreDeduction = 8;
 
@@ -26,6 +26,11 @@ public class GameController : Singleton<GameController>
     private int _ordersCompletedToday = 0;
     private int _dailyRating = 0;
     
+    [SerializeField] private bool _timerPaused = false;
+
+    private int _totalGoodReviews = 0;
+    private int _totalNeutralReviews = 0;
+    private int _totalBadReviews = 0;
 
     [SerializeField] private List<Order> _orderData;
     [SerializeField] private Note _dayNote;
@@ -42,9 +47,15 @@ public class GameController : Singleton<GameController>
         InitiateTutorial();
     }
 
+    public void PauseTimer(bool value) => _timerPaused = value;
+
     private void Update()
     {
-        if(_orderOngoing)
+        if(_completedOrders == 0)
+        {
+            _timer.text = "";
+        }
+        else if(_orderOngoing && !_timerPaused)
         {
             _timeLeft -= Time.deltaTime;
             _timer.text = "Timer - " + _timeLeft.ToString("00.##");
@@ -66,7 +77,6 @@ public class GameController : Singleton<GameController>
         else 
         {
             _orderOngoing = true;
-            _timer.gameObject.SetActive(true);
             NotesController.Instance.UpdateOrderNote(_orderData[_completedOrders].Preference);
             _timeLeft = _startingTime - (_day * _timeReductionPerDay);
         }
@@ -113,16 +123,21 @@ public class GameController : Singleton<GameController>
         else feedback = Order.Feedback.Bad;
         
         if(feedback == Order.Feedback.Good) 
+        {
             NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].GoodFeedback);
+            _totalGoodReviews++;
+        }
         else if(feedback == Order.Feedback.Neutral) 
         {
             NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].NeutralFeedback);
             _score -= _unimpressedScoreDeduction;
+            _totalNeutralReviews++;
         }
         else 
         {
             NotesController.Instance.UpdateFeedbackNote(_orderData[_completedOrders].BadFeedback);
             _score -= _disappointedScoreDeduction;
+            _totalBadReviews++;
         }
 
         _ordersCompletedToday++;
