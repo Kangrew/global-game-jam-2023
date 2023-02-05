@@ -73,6 +73,7 @@ public class Container : MonoBehaviour
             }else if(hit.collider.TryGetComponent<TrashCan>(out TrashCan can)){
                 ThrowDish();
                 can.transform.DOPunchScale(new Vector3(-0.2f,0.3f,0.4f),1);
+                SoundBox.Instance.PlaySound(SoundBox.Instance.countainer.TrashCan,transform.position);
             }
         }
 
@@ -107,8 +108,12 @@ public class Container : MonoBehaviour
             InitiateRecipe(); 
         }
         currentRecipe.AddIngredient(data);
-        if(DishType == Recipe.DishType.Soup) IngInContainer.color = data.IngredientColor;
-        if (DishType == Recipe.DishType.StirFry) IngInContainer.color = data.IngredientDarkColor;
+        if(DishType == Recipe.DishType.Soup) {IngInContainer.color = data.IngredientColor;
+        SoundBox.Instance.PlaySound(SoundBox.Instance.countainer.Boiling,transform.position);}
+        if (DishType == Recipe.DishType.StirFry) {IngInContainer.color = data.IngredientDarkColor;
+        SoundBox.Instance.PlaySound(SoundBox.Instance.countainer.Fry,transform.position);}
+        if (DishType == Recipe.DishType.Salad) { SoundBox.Instance.PlaySound(SoundBox.Instance.countainer.Vegie,transform.position);}
+
 
         SelectLevel(currentRecipe.Ingredients.Count - 1);
         transform.DOPunchScale(new Vector3(0.2f,0.4f,0.4f),0.7f);

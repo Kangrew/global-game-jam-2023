@@ -77,6 +77,7 @@ public class Stove : MonoBehaviour
         //ContainerPlaced.transform.DOScale(1.5f, 0.5f).SetEase(Ease.InOutBounce).SetLoops(2,LoopType.Yoyo);
         ContainerPlaced.OnStove = true;
         ContainerPlaced.drag.CanDrag = true;
+        SoundBox.Instance.PlaySound(SoundBox.Instance.countainer.LoadUtensil,transform.position);
     }
     private void PushContainerToOrginalPos()
     {

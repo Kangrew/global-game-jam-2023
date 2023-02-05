@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb32f8c004a30546adcf961ca8c282b, type: 3}
+  m_Name: SoundContainer
+  m_EditorClassIdentifier: 
+  Bell: {fileID: 8300000, guid: 35f3674333cf1104084da38645b9501f, type: 3}
+  Boiling: {fileID: 8300000, guid: 0ce1f32284d3e5348a3ef74b8b5398b6, type: 3}
+  Click: {fileID: 8300000, guid: 073c28cdd1ee85742af302b9c8ef5e3d, type: 3}
+  Fry: {fileID: 8300000, guid: 36898ce52a995a1418258dc4436b5594, type: 3}
+  LoadUtensil: {fileID: 8300000, guid: 12e44bf4af5efe94f99e8057f47f2d3c, type: 3}
+  Plate: {fileID: 8300000, guid: 4e817289c381e034ebadf528d9bae27e, type: 3}
+  TrashCan: {fileID: 8300000, guid: 2d72e1ffb33a5644cab2e80755d1b632, type: 3}
+  Vegie: {fileID: 8300000, guid: 62c2d9c05c4690841af52c42c55acd3c, type: 3}

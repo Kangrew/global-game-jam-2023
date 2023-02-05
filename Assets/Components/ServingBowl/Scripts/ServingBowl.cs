@@ -43,6 +43,7 @@ public class ServingBowl : MonoBehaviour
             con.ThrowDish();
             selectDish((int)FinalRecipe.Type);
             bell.gameObject.SetActive(true);
+            SoundBox.Instance.PlaySound(SoundBox.Instance.countainer.Plate,transform.position);
         }
     }
 

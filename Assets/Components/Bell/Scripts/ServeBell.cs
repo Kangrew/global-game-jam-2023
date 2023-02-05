@@ -29,6 +29,7 @@ public class ServeBell : MonoBehaviour
     {
         FindObjectOfType<Stove>().ResetStove();
         FindObjectOfType<ServingBowl>().SummitOrder();
+        SoundBox.Instance.PlaySound(SoundBox.Instance.countainer.Bell,transform.position);
         gameObject.SetActive(false);
     }
 }
