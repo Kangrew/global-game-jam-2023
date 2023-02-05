@@ -65,3 +65,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c67221c336a924045a893556ccbee0d3, type: 2}
   _dayNote: {fileID: 0}
   _gameOverScreen: {fileID: 0}
+  _timer: {fileID: 0}
+  TimeOutComments:
+  - Why are you such a lazy ass
+  - James Sameron is faster than you
+  - You can have that food I am leaving!!!
+  - My god can you be any  slower
+  - I might alwell cook my own food

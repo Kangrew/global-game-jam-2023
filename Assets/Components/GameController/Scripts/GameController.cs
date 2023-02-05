@@ -34,6 +34,8 @@ public class GameController : Singleton<GameController>
 
     private bool _orderOngoing = false;
 
+    [SerializeField] private string[] TimeOutComments;
+
     private void Start()
     {
         Shuffle<Order>(_orderData);
@@ -79,7 +81,8 @@ public class GameController : Singleton<GameController>
 
         if(recipe.Type == Recipe.DishType.Incomplete)
         {
-            NotesController.Instance.UpdateFeedbackNote(new Order.Note("Ran out of time!", Emotions.State.Disappointed));
+            string str = TimeOutComments[Random.Range(0,TimeOutComments.Length-1)];
+            NotesController.Instance.UpdateFeedbackNote(new Order.Note(str, Emotions.State.Disappointed));
             return;
         }
 
