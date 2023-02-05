@@ -8,7 +8,8 @@ public class Recipe
     {
         Salad,
         Soup,
-        StirFry
+        StirFry,
+        Incomplete
     }
 
     private DishType _type;

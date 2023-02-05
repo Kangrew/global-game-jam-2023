@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class CashController : Singleton<CashController>
 {
+    [SerializeField] private UnityEvent _onCashCredited;
     private const string _uiPrefix = "Balance: $";
 
     private int _balance = 10;
@@ -18,6 +18,7 @@ public class CashController : Singleton<CashController>
     public void Credit(int amount)
     {
         _balance += amount;
+        _onCashCredited.Invoke();
         UpdateUI();
     }
 

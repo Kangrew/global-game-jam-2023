@@ -786,6 +786,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 229311040008618813, guid: c72600410850f8d439652f280b0ddeb4, type: 3}
   m_PrefabInstance: {fileID: 4150496132124601048}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1400645914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8289763628449350940, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+  m_PrefabInstance: {fileID: 8177079048346267219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1459888207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 1714767473663772271, guid: e8692cf16ebf49f45867b864d757ca39, type: 3}
+      propertyPath: _timer
+      value: 
+      objectReference: {fileID: 1400645914}
     - target: {fileID: 1714767473663772271, guid: e8692cf16ebf49f45867b864d757ca39, type: 3}
       propertyPath: _dayNote
       value: 
@@ -4337,9 +4352,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8177079049465894092, guid: 13af9b6819533c647a51029238bd3951, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 8177079049307623547, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: _onCashCredited.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177079049307623547, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: _onCashCredited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177079049307623547, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: _onCashCredited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 317205232}
+    - target: {fileID: 8177079049307623547, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: _onCashCredited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177079049307623547, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: _onCashCredited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177079049307623547, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: _onCashCredited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177079049307623547, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: _onCashCredited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: e7686d92255721d42afe1c9342b62096, type: 3}
+    - target: {fileID: 8177079049307623547, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: _onCashCredited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8177079049465894130, guid: 13af9b6819533c647a51029238bd3951, type: 3}
       propertyPath: _onTutorialCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4357,8 +4400,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 317205232}
-    - target: {fileID: 8177079049928175914, guid: 13af9b6819533c647a51029238bd3951, type: 3}
-      propertyPath: m_hasFontAssetChanged
+    - target: {fileID: 8177079049894234577, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d012f66546d84da49a0cfe3ed6274a02, type: 3}
+    - target: {fileID: 8177079049894234579, guid: 13af9b6819533c647a51029238bd3951, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
