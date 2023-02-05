@@ -8,9 +8,9 @@ public class GameController : Singleton<GameController>
     private const int _badIngredientScore = -2;
     private const int _goodScore = 4;
     private const int _neutralScore = 2;
-    private const int _saladPrice = 10;
-    private const int _soupPrice = 10;
-    private const int _stirFryPrice = 10;
+    private const int _saladPrice = 8;
+    private const int _soupPrice = 8;
+    private const int _stirFryPrice = 8;
 
     private int _day = 0;
     private int _completedOrders = 0;
